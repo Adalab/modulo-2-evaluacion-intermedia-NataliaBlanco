@@ -35,7 +35,7 @@ function rightNumber() {
   } else if (number <= predefNumber) {
     typeMssg('Número demasiado Bajo');
   } else if (number === predefNumber) {
-    typeMssg = 'Has Ganado Campeona!!!';
+    typeMssg ('Has Ganado Campeona!!!');
   }
 }
 
