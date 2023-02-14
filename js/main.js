@@ -28,14 +28,14 @@ function rightNumber() {
   const number = parseInt(inputNumber.value);
   if (isNaN(number)) {
     typeMssg('Debe introducir un Número');
-  } else if (number > 1 || number <= 100) {
+  } else if (number < 1 || number > 100) {
     typeMssg('Número debe estar entre 1 y 100');
   } else if (number >= predefNumber) {
     typeMssg('Número demasiado Alto');
   } else if (number <= predefNumber) {
     typeMssg('Número demasiado Bajo');
-  } else if (number === predefNumber) {
-    typeMssg ('Has Ganado Campeona!!!');
+  } else {
+    typeMssg('Has Ganado Campeona!!!');
   }
 }
 
