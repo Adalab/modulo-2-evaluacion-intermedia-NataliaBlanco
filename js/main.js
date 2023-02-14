@@ -19,18 +19,26 @@ let trialNumber = 0;
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
+
+function typeMssg(msg) {
+  firstAnswer.innerHTML = msg;
+}
+
 function rightNumber() {
-  const number = inputNumber.value;
-  if (number >= predefNumber && number <= 101) {
-    firstAnswer.innerHTML = 'Número demasiado Alto';
+  const number = parseInt(inputNumber.value);
+  if (isNaN(number)) {
+    typeMssg('Debe introducir un Número');
+  } else if (number > 1 || number <= 100) {
+    typeMssg('Número debe estar entre 1 y 100');
+  } else if (number >= predefNumber) {
+    typeMssg('Número demasiado Alto');
   } else if (number <= predefNumber) {
-    firstAnswer.innerHTML = 'Número demasiado Bajo';
+    typeMssg('Número demasiado Bajo');
   } else if (number === predefNumber) {
-    firstAnswer.innerHTML = 'Has Ganado Campeona!!!';
-  } else if (number >= 101) {
-    firstAnswer.innerHTML = 'Introduce un número correcto';
+    typeMssg = 'Has Ganado Campeona!!!';
   }
 }
+
 function cumMessage() {
   trialNumber = trialNumber + 1;
   secondAnswer.innerHTML = `Número de Intentos ${trialNumber}`;
